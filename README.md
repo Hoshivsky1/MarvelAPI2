@@ -4,5 +4,6 @@ Built with hooks and functions
 ### Run app
 
 ```
+nmp install
 npm start
 ```
