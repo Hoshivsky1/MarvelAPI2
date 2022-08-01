@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Spinner from '../spinner/spinner';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import Skeleton from '../skeleton/Skeleton'
-import MarvelService from '../../services/MarvelService';
+import useMarvelService from '../../services/MarvelService';
 
 import './charInfo.scss';
 
@@ -13,10 +13,8 @@ import './charInfo.scss';
 const CharInfo = (props) => {
 
     const [char, setChar] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(false);
 
-    const marvelService = new MarvelService();
+    const {loading, error, getCharacter, clearError} = useMarvelService();
 
     useEffect(() => {
         updateChar();
@@ -28,11 +26,9 @@ const CharInfo = (props) => {
         if(!charId) {
             return;
         }
-        onCharLoading();
-        marvelService
-            .getCharacters(charId)
+        clearError();
+        getCharacter(charId)
             .then(onCharLoaded)
-            .catch(onError);
     }
 
     const onCharLoaded = (char) => {
@@ -40,16 +36,6 @@ const CharInfo = (props) => {
             char.description = "There is no data about this character" ;
         } 
         setChar(char)
-        setLoading(false);
-    }
-
-    const onCharLoading = () => {
-        setLoading(true);
-    }
-
-    const onError = () => { 
-        setError(true);
-        setLoading(false);
     }
 
     const skeleton = char || loading || error ? null : <Skeleton/>; 
