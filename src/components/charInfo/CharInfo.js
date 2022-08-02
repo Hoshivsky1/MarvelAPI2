@@ -8,8 +8,6 @@ import useMarvelService from '../../services/MarvelService';
 
 import './charInfo.scss';
 
-
-
 const CharInfo = (props) => {
 
     const [char, setChar] = useState(null);

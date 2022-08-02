@@ -33,10 +33,12 @@ const CharList = (props) => {
         }
 
         setCharList(charList => [...charList, ...newCharList]);
-        setNewItemLoading(false);
+        setNewItemLoading(newItemLoading => false);
         setOffset(offset => offset + 9);
         setCharEnded(charEnded => ended);
     }
+
+    console.log('ddd')
 
     const itemRefs = useRef([]);
 

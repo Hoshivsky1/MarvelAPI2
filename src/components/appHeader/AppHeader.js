@@ -1,3 +1,4 @@
+import { Link, NavLink } from 'react-router-dom';
 import './appHeader.scss';
 
 const AppHeader = ({onClick}) => {
@@ -5,17 +6,21 @@ const AppHeader = ({onClick}) => {
     return (
         <header className="app__header">
             <h1 className="app__title">
-                <a href=";">
+                <Link to="/">
                     <span>Marvel</span> information portal
-                </a>
+                </Link>
             </h1>
             <nav className="app__menu">
                 <ul>
-                    <li><a onClick={onClick} name="Characters" href=";">Characters</a></li>
+                    <li><NavLink 
+                        end 
+                        style={({ isActive }) => ({color: isActive ? '#9F0013' : 'inherit'})} 
+                        to="/">Characters</NavLink></li>
                     /
-                    <li>
-                        <a onClick={onClick} name="Comics" href=";">Comics</a>
-                    </li>
+                    <li><NavLink 
+                        end
+                        style={({ isActive }) => ({color: isActive ? '#9F0013' : 'inherit'})}
+                        to="/comics">Comics</NavLink></li>
                 </ul>
             </nav>
         </header>
