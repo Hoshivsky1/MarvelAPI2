@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import '../../style/error404.scss'
 
-const PageError404 = () => {
+const NotFound = () => {
     return (
         <div>
             <ErrorMessage/>
@@ -16,4 +16,4 @@ const PageError404 = () => {
     
 }
 
-export default PageError404;
+export default NotFound;

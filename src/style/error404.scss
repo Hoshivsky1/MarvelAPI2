@@ -1,10 +1,12 @@
+@import './variables';
+
 .errorPage{
     display: block;
     position: relative;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
-    background-color: #d9001c;
+    background-color: $main-color;
     max-width: 250px;
     margin: 0 auto;
     height: 50px;
@@ -15,7 +17,7 @@
     box-shadow: rgba(0, 0, 0, 0.759) 5px 5px 3px ;
     &:hover{
         color : rgb(255, 255, 255);
-        background-color:#6e6969;
+        background-color:$grey;
         box-shadow: rgba(0, 0, 0, 0.57) 0px 0px 5px ;
         top: 5px;
     }

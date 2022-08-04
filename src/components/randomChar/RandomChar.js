@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, } from 'react';
 
 import mjolnir from '../../resources/img/mjolnir.png';
 import useMarvelService from '../../services/MarvelService';
@@ -14,12 +14,12 @@ const RandomChar = () => {
 
     useEffect(() => {
         updateChar();
-        // const timerId = setInterval(updateChar, 60000);
+        const timerId = setInterval(updateChar, 60000);
         
-        // return () => {
-        //     clearInterval(timerId)
-        // }
-        // eslint-disable-next-line
+        return () => {
+            clearInterval(timerId)
+        }
+        //eslint-disable-next-line
     }, [])
 
     const onCharLoaded = (char) => {

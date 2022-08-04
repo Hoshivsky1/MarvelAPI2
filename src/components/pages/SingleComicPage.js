@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import Spinner from '../spinner/spinner';
-import PageError404 from './404';
+import NotFound from './NotFound';
 import useMarvelService from '../../services/MarvelService';
 import ErrorMessage from '../errorMessage/ErrorMessage';
 import { useParams, Link } from 'react-router-dom';
@@ -31,14 +31,13 @@ const SingleComicPage = () => {
     }
     
     const errorMessage = error ? <ErrorMessage/> : null;
-    const idСomic = window.location.pathname.replace(/\D/g, '')
-    const urlPath = idСomic === window.location.pathname.slice(8) ? true : false
+    const urlPath = window.location.pathname.replace(/\D/g, '') === window.location.pathname.slice(8) ? true : false
     const content = !(loading || error || !comic) ? <View comic={comic}/> : null; 
     
     return (
         <>  
             {errorMessage}
-            {urlPath ? content : <PageError404/>}
+            {urlPath ? content : <NotFound/>}
             {loading ? <Spinner/>: null}
         </>
     )
