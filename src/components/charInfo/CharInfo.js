@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import Spinner from '../spinner/spinner';
@@ -9,7 +10,6 @@ import useMarvelService from '../../services/MarvelService';
 import './charInfo.scss';
 
 const CharInfo = (props) => {
-
     const [char, setChar] = useState(null);
 
     const {loading, error, getCharacter, clearError} = useMarvelService();
@@ -53,13 +53,12 @@ const CharInfo = (props) => {
 
 const View = ({char}) => {
     const {name, description, thumbnail, homepage, wiki, comics} = char
-    
+
     const imgUrl = "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"
     let imgStyle = {objectFit: "cover"}
     if(char.thumbnail === imgUrl ) {
         imgStyle = {objectFit: "contain"}
     }
-
     return (
         <>
             <div className="char__basics">
@@ -87,8 +86,8 @@ const View = ({char}) => {
                             // eslint-disable-next-line
                             if(i > 9) return;
                             return (
-                                <li key={i} className="char__comics-item">
-                                    {item.name}
+                                <li style={{'cursor': 'pointer'}} key={i} className="char__comics-item">
+                                    <NavLink end  to={`/comics/${item.resourceURI.slice(43)}` } >{item.name}</NavLink>
                                 </li>
                             )
                         })

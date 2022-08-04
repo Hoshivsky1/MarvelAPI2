@@ -1,0 +1,22 @@
+.errorPage{
+    display: block;
+    position: relative;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #d9001c;
+    max-width: 250px;
+    margin: 0 auto;
+    height: 50px;
+    line-height: 52px;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    transition: ease-out 0.2s;
+    box-shadow: rgba(0, 0, 0, 0.759) 5px 5px 3px ;
+    &:hover{
+        color : rgb(255, 255, 255);
+        background-color:#6e6969;
+        box-shadow: rgba(0, 0, 0, 0.57) 0px 0px 5px ;
+        top: 5px;
+    }
+}

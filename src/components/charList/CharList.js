@@ -38,8 +38,6 @@ const CharList = (props) => {
         setCharEnded(charEnded => ended);
     }
 
-    console.log('ddd')
-
     const itemRefs = useRef([]);
 
     const focusOnItem = (id) => {      
