@@ -23,6 +23,7 @@
         padding: 15px;
         cursor: pointer;
         transition: 0.3s transform;
+        animation: char__item 0.7s ;
         img {
             width: 200px;
             height: 200px;
@@ -42,3 +43,13 @@
         color: #fff;
     }
 }
+
+@keyframes char__item {
+    from {
+        opacity: 0;
+    }
+  
+    to {
+        opacity: 1;
+    }
+  }
