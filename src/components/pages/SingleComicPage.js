@@ -31,13 +31,13 @@ const SingleComicPage = () => {
     }
     
     const errorMessage = error ? <ErrorMessage/> : null;
-    const urlPath = window.location.pathname.replace(/\D/g, '') === window.location.pathname.slice(8) ? true : false
+    const urlPath = window.location.pathname.replace(/\D/g, '') === window.location.pathname.slice(8) ? true : false 
     const content = !(loading || error || !comic) ? <View comic={comic}/> : null; 
     
     return (
         <>  
             {errorMessage}
-            {urlPath ? content : <NotFound/>}
+            {urlPath && window.location.pathname.replace(/\D/g, '').length < 6 ? content : <NotFound/>}
             {loading ? <Spinner/>: null}
         </>
     )

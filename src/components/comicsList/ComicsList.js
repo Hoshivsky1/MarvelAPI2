@@ -64,7 +64,7 @@ const ComicsList = () => {
 
     const errorMessage = error ? <ErrorMessage/> : null;
     const spinner = loading && !newItemLoading ? <Spinner/> : null;
-
+    // console.log(window.location.pathname)
     return (
         <div className="comics__list">
             {errorMessage}
