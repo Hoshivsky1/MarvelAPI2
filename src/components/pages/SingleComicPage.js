@@ -9,7 +9,7 @@ import { useParams, Link } from 'react-router-dom';
 
 import './singleComic.scss';
 
-const SingleComicPage = () => {
+const SingleComicPage = () => { 
     const {comicId} = useParams();
     const [comic, setComic] = useState(null);
 
@@ -45,7 +45,7 @@ const SingleComicPage = () => {
 
 const View = ({comic}) => {
     const {title, description, pageCount, thumbnail, language, price } = comic;
-    
+    document.title = title;
     return (
         <div className="single-comic">
             <img src={thumbnail} alt={title} className="single-comic__img"/>

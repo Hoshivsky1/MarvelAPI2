@@ -8,7 +8,7 @@ import ErrorMessage from '../errorMessage/ErrorMessage';
 import './comicsList.scss';
 
 const ComicsList = () => {
-
+    document.title = "Comics"
     const [comicsList, setComicsList] = useState([]);
     const [newItemLoading, setnewItemLoading] = useState(false);
     const [offset, setOffset] = useState(0);
