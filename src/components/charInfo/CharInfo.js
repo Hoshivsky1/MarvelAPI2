@@ -46,8 +46,8 @@ const CharInfo = (props) => {
             {skeleton}
             {errorMessage}
             {spinner}
-            {content}
-        </div>
+            {content} 
+        </div>   
     )
 }
 
