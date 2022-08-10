@@ -13,7 +13,6 @@ const AppHeader = ({onClick}) => {
             <nav className="app__menu">
                 <ul>
                     <li><NavLink 
-                        end 
                         style={({ isActive }) => ({color: isActive ? '#c1011b' : 'inherit'})} 
                         to="/">Characters</NavLink></li>
                     /
