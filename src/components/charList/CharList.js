@@ -27,7 +27,7 @@ const CharList = (props) => {
 
     const [charList, setCharList] = useState([]);
     const [newItemLoading, setnewItemLoading] = useState(false);
-    const [offset, setOffset] = useState(210);
+    const [offset, setOffset] = useState(0);
     const [charEnded, setCharEnded] = useState(false);
     
     const {getAllCharacters, process, setProcess} = useMarvelService();
@@ -64,6 +64,7 @@ const CharList = (props) => {
     }
 
     const renderItems = arr => {
+        console.log('render')
         const items =  arr.map((item, i) => {
             let imgStyle = {'objectFit' : 'cover'};
             if (item.thumbnail === 'http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg') {
